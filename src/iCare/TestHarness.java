@@ -271,7 +271,22 @@ public class TestHarness {
         assertEquals(expected, given,0);
     }
 
-
-
+    @Test
+    public void testGenerateReport() {
+        System.out.println("generateReport");
+        String userId = "";
+        double bodyTempF = 0.0;
+        double weightLB = 0.0;
+        double heightFT = 0.0;
+        double bmi = 0.0;
+        double bpSystolic = 0.0;
+        double bpDiastolic = 0.0;
+        double respRate = 0.0;
+        double pulseBPM = 0.0;
+        Report instance = new Report();
+        String expResult = "";
+        String result = instance.generateReport(userId, bodyTempF, weightLB, heightFT, bmi, bpSystolic, bpDiastolic, respRate, pulseBPM);
+        assertEquals(expResult, result);
+    }
 
 }
