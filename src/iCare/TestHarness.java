@@ -54,9 +54,41 @@ public class TestHarness {
         System.out.print("success\n");
         
        
-        //System.out.println("\nTesting Notification Class...");
-
+        System.out.println("\nTesting User Class...");
+        
+        System.out.print("\tTesting Username...");
+        testUser();
+        System.out.print("success\n");
                
+        System.out.println("\nTesting Vitals Class...");
+        
+        System.out.print("\tTesting bodytemp...");
+        testBodyTempF();
+        System.out.print("success\n");   
+     
+        System.out.print("\tTesting weight...");
+        testWeightLB();
+        System.out.print("success\n"); 
+     
+        System.out.print("\tTesting height...");
+        testHeightFT();
+        System.out.print("success\n"); 
+        
+        System.out.print("\tTesting BP Systolic...");
+        testBPSystolic();
+        System.out.print("success\n");    
+      
+        System.out.print("\tTesting BP Diastolic...");
+        testBPDiastolic();
+        System.out.print("success\n");    
+      
+        System.out.print("\tTesting Respiration Rate...");
+        testRespRate();
+        System.out.print("success\n");  
+        
+        System.out.print("\tTesting Pulse BPM...");
+        testPulseBPM();
+        System.out.print("success\n");  
     }
 
     //Test Login
@@ -163,6 +195,81 @@ public class TestHarness {
         assertEquals(expected, given);
     }
 
+    // User
+    
+    @Test
+    public static void testUser(){
+        User u = new User();
+        String expected= "testuser";
+        u.setUsername(expected);
+        String given = u.getUsername();
+        assertEquals(expected, given);
+    }
+    
+    //Vitals
+       
+    @Test
+    public static void testBodyTempF(){
+        
+        double expected = 99.8;
+        Vitals v = new Vitals(expected, 150, 6.2,  120, 80 , 18, 90);
+        
+        double given =v.getBodyTempF();
+        assertEquals(expected, given,0);
+
+    }
+    
+    @Test 
+    public static void testWeightLB(){
+        double expected = 150;
+        Vitals v = new Vitals(99.8, expected, 6.2,  120, 80 , 18, 90);
+        
+        double given = v.getWeightLB();
+        assertEquals(expected, given,0);
+
+    }
+    
+    @Test
+    public static void testHeightFT(){
+        double expected = 6.2;
+        Vitals v = new Vitals(99.8, 150, expected,  120, 80 , 18, 90);
+        
+        double given = v.getHeightFT();
+        assertEquals(expected, given,0);
+    }
+    
+    @Test
+    public static void testBPSystolic(){
+        double expected = 120;
+        Vitals v = new Vitals(99.8, 150, 6.2,  expected, 80 , 18, 90);
+        double given = v.getBpSystolic();
+        assertEquals(expected, given,0);
+        
+    }
+    
+    @Test
+    public static void testBPDiastolic(){
+        double expected = 80;
+        Vitals v = new Vitals(99.8, 150, 6.2,  120, expected , 18, 90);
+        double given = v.getBpDiastolic();
+        assertEquals(expected, given,0);
+    }
+    
+    @Test
+    public static void testRespRate(){
+        double expected = 18;
+        Vitals v = new Vitals(99.8, 150, 6.2,  120, 80 , expected, 90);
+        double given = v.getRespRate();
+        assertEquals(expected, given,0);
+    }
+    
+    @Test
+    public static void testPulseBPM(){
+        double expected = 18;
+        Vitals v = new Vitals(99.8, 150, 6.2,  120, 80 , expected, expected);
+        double given = v.getRespRate();
+        assertEquals(expected, given,0);
+    }
 
 
 
