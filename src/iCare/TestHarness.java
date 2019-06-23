@@ -1,5 +1,6 @@
 package iCare;
 
+import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,60 +22,38 @@ public class TestHarness {
         
         System.out.println("\nTesting Medication Class...");
 
-        System.out.print("\tTesting getMedName...");
-        testGetMedName();
-        System.out.print("success\n");
-        
-        System.out.print("\tTesting setMedName...");
-        testSetMedName();
-        System.out.print("success\n");
-    
-        System.out.print("\tTesting getMedQuantity...");
-        testGetMedQuantity();
-        System.out.print("success\n");
-        
-        System.out.print("\tTesting setMedQuantity...");
-        testSetMedQuantity();
-        System.out.print("success\n");
-  
-        System.out.print("\tTesting getMedQuantityUnit...");
-        testGetMedQuantityUnit();
-        System.out.print("success\n");
-        
-        System.out.print("\tTesting setMedQuantityUnit...");
-        testSetMedQuantityUnit();
-        System.out.print("success\n");
-        
-        System.out.print("\tTesting getFrequency...");
-        testGetFrequency();
-        System.out.print("success\n");  
-        
-        System.out.print("\tTesting setFrequency...");
-        testSetFrequency();
+        System.out.print("\tTesting MedName...");
+        testMedName();
         System.out.print("success\n");
        
-        System.out.print("\tTesting getFrequencyTakenUnit...");
-        testGetFrequencyTakenUnit();
+        System.out.print("\tTesting getMedQuantity...");
+        testMedQuantity();
+        System.out.print("success\n");
+        
+        System.out.print("\tTesting MedQuantityUnit...");
+        testMedQuantityUnit();
+        System.out.print("success\n");
+        
+        
+        System.out.print("\tTesting Frequency...");
+        testFrequency();
+        System.out.print("success\n");  
+        
+       
+       
+        System.out.print("\tTesting FrequencyTakenUnit...");
+        testFrequencyTakenUnit();
         System.out.print("success\n");
                            
-        System.out.print("\tTesting setFrequencyTakenUnit...");
-        testSetFrequencyTakenUnit();
-        System.out.print("success\n");
-                        
-        System.out.print("\tTesting setFrequencyTakenUnit...");
-        testSetFrequencyTakenUnit();
-        System.out.print("success\n");
+      
         
         System.out.println("\nTesting Medications Class...");
         
-        System.out.print("\tTesting getMedicationList...");
-        testGetMedicationList();
+        System.out.print("\tTesting MedicationList...");
+        testMedicationList();
         System.out.print("success\n");
         
-        System.out.print("\tTesting setMedicationList...");
-        testSetMedicationList();
-        System.out.print("success\n");
-                 
+       
         //System.out.println("\nTesting Notification Class...");
 
                
@@ -105,96 +84,86 @@ public class TestHarness {
         assertEquals(expected, given);
     }
 
-
-    //Test Medication
     @Test
-    public static void testGetMedName() {
+    public static void testMedName() {
+        Medication m = new Medication();
+        String expected ="doxycycline";
 
-        String expected ="";
-        String given = "";
+        m.setMedName(expected);
+        String given = m.getMedName();
         assertEquals(expected, given);
     }
 
     @Test
-    public static void testSetMedName() {
-        String expected ="";
-        String given = "";
+    public static void testMedQuantity() {
+        Medication m = new Medication();
+        double expected =200;
+
+        m.setQuantity(expected);
+        double given = m.getQuantity();
+        
+        assertEquals(expected, given,0); //0 for delta
+    }
+
+    @Test
+    public static void testMedQuantityUnit() {
+        Medication m = new Medication();
+        String expected ="mg";
+
+        m.setMedName(expected);
+        String given = m.getMedName();
+        assertEquals(expected, given);
+    }
+
+
+    @Test
+    public static void testFrequency() {
+        Medication m = new Medication();
+        int expected =1;
+
+        m.setFrequency(expected);
+        int given = m.getFrequency();
+        
         assertEquals(expected, given);
     }
 
     @Test
-    public static void testGetMedQuantity() {
+    public static void testFrequencyTakenUnit() {
+        Medication m = new Medication();
+        String expected ="pill/day";
 
-        String expected ="";
-        String given = "";
-        assertEquals(expected, given);
-    }
-    @Test
-    public static void testSetMedQuantity() {
-
-        String expected ="";
-        String given = "";
+        m.setFrequencyTakenUnit(expected);
+        String given = m.getFrequencyTakenUnit();
         assertEquals(expected, given);
     }
 
-    @Test
-    public static void testGetMedQuantityUnit() {
-        String expected ="";
-        String given = "";
-        assertEquals(expected, given);
-    }
 
-    @Test
-    public static void testSetMedQuantityUnit() {
-        String expected ="";
-        String given = "";
-        assertEquals(expected, given);
-    }
-
-    @Test
-    public static void testGetFrequency() {
-        String expected ="";
-        String given = "";
-        assertEquals(expected, given);
-    }
-
-    @Test
-    public static void testSetFrequency() {
-        String expected ="";
-        String given = "";
-        assertEquals(expected, given);
-    }
-
-    @Test
-    public static void testGetFrequencyTakenUnit() {
-        String expected ="";
-        String given = "";
-        assertEquals(expected, given);
-    }
-
-    @Test
-    public static void testSetFrequencyTakenUnit() {
-        String expected ="";
-        String given = "";
-        assertEquals(expected, given);
-    }
 
     //Test Medications
 
     @Test
-    public static void testGetMedicationList() {
+    public static void testMedicationList() {
+        ArrayList<Medication> expected = new ArrayList<Medication>();
+        Medication med = new Medication();
+        med.setMedName("Doxycycline");
+        med.setFrequency(1);
+        med.setMedQuantityUnit("mg");
+        med.setFrequencyTakenUnit("pill/day");
+        med.setQuantity(200);
+        expected.add(med);
+        
+        med = new Medication();
+        med.setMedName("Ibuprofen");
+        expected.add(med);
+        
+        Medications ms = new Medications(expected);
+        
+        ArrayList<Medication> given = ms.getMedicationList();
 
-        String expected ="";
-        String given = "";
         assertEquals(expected, given);
     }
 
-    @Test
-    public static void testSetMedicationList() {
-        String expected ="";
-        String given = "";
-        assertEquals(expected, given);
-    }
+
 
 
 
