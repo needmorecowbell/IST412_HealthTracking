@@ -25,7 +25,10 @@ public class Report {
      * 
      * @param userId The patient's ID.
      */
-    public void generateReport(String userId){
-        getPatientInfo(userId);
+    public String generateReport(String userId, double bodyTempF,double weightLB, double heightFT, double bmi, double bpSystolic, double bpDiastolic, double respRate, double pulseBPM){
+        
+        String vitalsReport = ("\n UserID: "+userId +"\n Body Temperature: "+bodyTempF+"º\n Height: "+heightFT+"'\n Weight: "+weightLB+
+                               " pounds\n Body Mass Index: " +bmi+" bmi \n Blood Pressure: "+bpSystolic+"/"+bpDiastolic+"\n Respiration: "+respRate+" breaths per minute \n Pulse: "+pulseBPM+" beats per minute. \n\n ***End of Record***");
+        return vitalsReport;
     }
 }

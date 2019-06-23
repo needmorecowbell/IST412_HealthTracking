@@ -5,7 +5,6 @@
  */
 package iCare;
 
-import java.text.DecimalFormat;
 import java.util.HashMap;
 
 /**
@@ -29,10 +28,11 @@ public class Vitals {
         this.bodyTempF = bodyTempF;
         this.weightLB = weightLB;
         this.heightFT = heightFT;
-        this.bpSystolic = bpSystolic;
-        this.bpDiastolic = bpDiastolic;
-        this.respRate = respRate;
-        this.pulseBPM = pulseBPM;
+        //Removed BMI from constructor due to it being calculated in it's own method using height & weight
+        this.bpSystolic = bpSystolic;//added by WS
+        this.bpDiastolic = bpDiastolic;//added by WS
+        this.respRate = respRate;//added by WS
+        this.pulseBPM = pulseBPM;//added by WS
     }
 
     public double getBodyTempF() {
@@ -42,7 +42,7 @@ public class Vitals {
     public void setBodyTempF(double bodyTempF) {
         this.bodyTempF = bodyTempF;
     }
-
+/**********************Commented out get & set BMI due to BMI being calculated in its own method
 //    public double getBmi() {
 //        return bmi;
 //    }
@@ -50,6 +50,7 @@ public class Vitals {
 //    public void setBmi(double bmi) {
 //        this.bmi = bmi;
 //    }
+*/
 
     public double getWeightLB() {
         return weightLB;
@@ -102,11 +103,9 @@ public class Vitals {
     /**
      * Calculates BMI
      */
-    
     public double calculateBMI(double heightFT, double weightLB){//added by WS
         int heightIN = (int) (heightFT * 12);//added by WS
-        bmi = (weightLB/(Math.pow(heightIN, 2)))*703;//added by WS
-        this.bmi = bmi;//added by WS
+        this.bmi = (weightLB/(Math.pow(heightIN, 2)))*703;//added by WS
         return this.bmi;//added by WS
     }  
     /**

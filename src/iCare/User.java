@@ -12,6 +12,7 @@ package iCare;
 public class User {
 
     private String username;
+    
 
     /**
      * Get the value of username
