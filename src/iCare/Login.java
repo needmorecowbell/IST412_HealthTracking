@@ -32,6 +32,7 @@ public class Login {
      * @return boolean
      */
     Boolean login() {
+        this.loggedIn=true;
         return true;
     }
     
