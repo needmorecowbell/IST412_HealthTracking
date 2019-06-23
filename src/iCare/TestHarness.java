@@ -1,34 +1,37 @@
+package iCare;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class TestHarness {
     public static void main(String[] args) {
         testLogin();
+        
         testUserController();
 
     }
 
     //Test Login
     @Test
-    public void testLogin(){
+    public static void testLogin(){
         Login l = new Login();
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     //Test UserController
     @Test
-    public void testUserController(){
-        expected ="";
-        given = "";
+    public static void testUserController(){
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     @Test
-    public void testNotifactionController(){
-        expected ="";
-        given = "";
+    public static void testNotifactionController(){
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
@@ -37,72 +40,72 @@ public class TestHarness {
     @Test
     public void testGetMedName() {
 
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     @Test
     public void testSetMedName() {
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     @Test
-    public double testGetQuantity() {
+    public void testGetQuantity() {
 
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
     @Test
     public void testSetQuantity() {
 
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     @Test
     public void testGetMedQuantityUnit() {
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     @Test
     public void testSetMedQuantityUnit() {
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     @Test
     public void testGetFrequency() {
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     @Test
     public void testSetFrequency() {
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     @Test
     public void testGetFrequencyTakenUnit() {
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     @Test
     public void testSetFrequencyTakenUnit() {
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
@@ -111,15 +114,15 @@ public class TestHarness {
     @Test
     public void testGetMedicationList() {
 
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
     @Test
     public void testSetMedicationList() {
-        expected ="";
-        given = "";
+        String expected ="";
+        String given = "";
         assertEquals(expected, given);
     }
 
