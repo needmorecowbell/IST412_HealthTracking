@@ -30,12 +30,54 @@ public class TestHarness {
         System.out.print("success\n");
     
         System.out.print("\tTesting getMedQuantity...");
-        testGetMedName();
+        testGetMedQuantity();
         System.out.print("success\n");
         
         System.out.print("\tTesting setMedQuantity...");
-        testSetMedName();
+        testSetMedQuantity();
         System.out.print("success\n");
+  
+        System.out.print("\tTesting getMedQuantityUnit...");
+        testGetMedQuantityUnit();
+        System.out.print("success\n");
+        
+        System.out.print("\tTesting setMedQuantityUnit...");
+        testSetMedQuantityUnit();
+        System.out.print("success\n");
+        
+        System.out.print("\tTesting getFrequency...");
+        testGetFrequency();
+        System.out.print("success\n");  
+        
+        System.out.print("\tTesting setFrequency...");
+        testSetFrequency();
+        System.out.print("success\n");
+       
+        System.out.print("\tTesting getFrequencyTakenUnit...");
+        testGetFrequencyTakenUnit();
+        System.out.print("success\n");
+                           
+        System.out.print("\tTesting setFrequencyTakenUnit...");
+        testSetFrequencyTakenUnit();
+        System.out.print("success\n");
+                        
+        System.out.print("\tTesting setFrequencyTakenUnit...");
+        testSetFrequencyTakenUnit();
+        System.out.print("success\n");
+        
+        System.out.println("\nTesting Medications Class...");
+        
+        System.out.print("\tTesting getMedicationList...");
+        testGetMedicationList();
+        System.out.print("success\n");
+        
+        System.out.print("\tTesting setMedicationList...");
+        testSetMedicationList();
+        System.out.print("success\n");
+                 
+        //System.out.println("\nTesting Notification Class...");
+
+               
     }
 
     //Test Login
@@ -81,14 +123,14 @@ public class TestHarness {
     }
 
     @Test
-    public static void testGetQuantity() {
+    public static void testGetMedQuantity() {
 
         String expected ="";
         String given = "";
         assertEquals(expected, given);
     }
     @Test
-    public static void testSetQuantity() {
+    public static void testSetMedQuantity() {
 
         String expected ="";
         String given = "";
