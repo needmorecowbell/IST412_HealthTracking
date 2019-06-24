@@ -23,4 +23,12 @@ public class NotificationController {
         this.notificationsList = notificationsList;
     }
     
+    public void displaynotifcationsList()
+    {
+        for (Notification n : notificationsList)
+        {
+            System.out.println(n.toString());
+        }
+    }
+    
 }

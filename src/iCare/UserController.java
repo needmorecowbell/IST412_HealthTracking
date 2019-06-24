@@ -20,5 +20,9 @@ public class UserController {
     public UserController(User user) {
         this.user = user;
     }
-    
+    public void displayUser()
+    {
+        System.out.println(user.toString());
+    }
+        
 }
