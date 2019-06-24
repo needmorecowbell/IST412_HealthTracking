@@ -104,15 +104,24 @@ public class TestHarness {
     //Test UserController
     @Test
     public static void testUserController(){
-        String expected ="";
-        String given = "";
+        String expected ="Test";
+        User testuser = new User();
+        testuser.setUsername("Test");
+        UserController UserCntrl = new UserController(testuser);
+        String given = UserCntrl.getUsername();
         assertEquals(expected, given);
     }
 
+    //Test NotificationController
     @Test
     public static void testNotificationController(){
-        String expected ="";
-        String given = "";
+        Notification testnotification = new Notification("this is a test");
+        String expected = testnotification.toString();
+       
+        NotificationController NotificationCntrl = new NotificationController();
+        NotificationCntrl.addNotification(testnotification);
+        //NotificationCntrl.displaynotifcationsList();
+        String given = NotificationCntrl.displaynotifcationsList().toString();
         assertEquals(expected, given);
     }
 

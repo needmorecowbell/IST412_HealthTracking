@@ -13,22 +13,31 @@ import java.util.ArrayList;
  */
 public class NotificationController {
     
-    ArrayList<Notification> notificationsList;
+    ArrayList<Notification> notificationsList = new ArrayList<Notification>();
     
     /**
      * Constructor for the NotificationController class.
      * @param notificationsList List of notifications to hydrate the controller with.
      */
-    public NotificationController(ArrayList<Notification> notificationsList) {
+    public NotificationController() {
         this.notificationsList = notificationsList;
     }
     
-    public void displaynotifcationsList()
+    
+    public void addNotification(Notification n)
+    {
+       notificationsList.add(n);
+    }
+    
+    public Notification displaynotifcationsList()
     {
         for (Notification n : notificationsList)
         {
-            System.out.println(n.toString());
+            //System.out.println(n.toString());
+            return n;
+        
         }
+        return null;
     }
-    
 }
+    
