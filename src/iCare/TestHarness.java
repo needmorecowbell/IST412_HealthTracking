@@ -9,86 +9,86 @@ public class TestHarness {
         System.out.print("Testing Login...");
         testLogin();
         System.out.print("success\n");
-        
+
         System.out.println("\nTesting Controllers...");
-        
+
         System.out.print("\tTesting UserController...");
         testUserController();
         System.out.print("success\n");
-        
+
         System.out.print("\tTesting NotificationController...");
         testNotificationController();
         System.out.print("success\n");
-        
+
         System.out.println("\nTesting Medication Class...");
 
         System.out.print("\tTesting MedName...");
         testMedName();
         System.out.print("success\n");
-       
+
         System.out.print("\tTesting getMedQuantity...");
         testMedQuantity();
         System.out.print("success\n");
-        
+
         System.out.print("\tTesting MedQuantityUnit...");
         testMedQuantityUnit();
         System.out.print("success\n");
-        
-        
+
+
         System.out.print("\tTesting Frequency...");
         testFrequency();
-        System.out.print("success\n");  
-        
-       
-       
+        System.out.print("success\n");
+
+
+
         System.out.print("\tTesting FrequencyTakenUnit...");
         testFrequencyTakenUnit();
         System.out.print("success\n");
-                           
-      
-        
+
+
+
         System.out.println("\nTesting Medications Class...");
-        
+
         System.out.print("\tTesting MedicationList...");
         testMedicationList();
         System.out.print("success\n");
-        
-       
+
+
         System.out.println("\nTesting User Class...");
-        
+
         System.out.print("\tTesting Username...");
         testUser();
         System.out.print("success\n");
-               
+
         System.out.println("\nTesting Vitals Class...");
-        
+
         System.out.print("\tTesting bodytemp...");
         testBodyTempF();
-        System.out.print("success\n");   
-     
+        System.out.print("success\n");
+
         System.out.print("\tTesting weight...");
         testWeightLB();
-        System.out.print("success\n"); 
-     
+        System.out.print("success\n");
+
         System.out.print("\tTesting height...");
         testHeightFT();
-        System.out.print("success\n"); 
-        
+        System.out.print("success\n");
+
         System.out.print("\tTesting BP Systolic...");
         testBPSystolic();
-        System.out.print("success\n");    
-      
+        System.out.print("success\n");
+
         System.out.print("\tTesting BP Diastolic...");
         testBPDiastolic();
-        System.out.print("success\n");    
-      
+        System.out.print("success\n");
+
         System.out.print("\tTesting Respiration Rate...");
         testRespRate();
-        System.out.print("success\n");  
-        
+        System.out.print("success\n");
+
         System.out.print("\tTesting Pulse BPM...");
         testPulseBPM();
-        System.out.print("success\n");  
+        System.out.print("success\n");
     }
 
     //Test Login
@@ -117,7 +117,7 @@ public class TestHarness {
     public static void testNotificationController(){
         Notification testnotification = new Notification("this is a test");
         String expected = testnotification.toString();
-       
+
         NotificationController NotificationCntrl = new NotificationController();
         NotificationCntrl.addNotification(testnotification);
         //NotificationCntrl.displaynotifcationsList();
@@ -142,7 +142,7 @@ public class TestHarness {
 
         m.setQuantity(expected);
         double given = m.getQuantity();
-        
+
         assertEquals(expected, given,0); //0 for delta
     }
 
@@ -164,7 +164,7 @@ public class TestHarness {
 
         m.setFrequency(expected);
         int given = m.getFrequency();
-        
+
         assertEquals(expected, given);
     }
 
@@ -192,20 +192,20 @@ public class TestHarness {
         med.setFrequencyTakenUnit("pill/day");
         med.setQuantity(200);
         expected.add(med);
-        
+
         med = new Medication();
         med.setMedName("Ibuprofen");
         expected.add(med);
-        
+
         Medications ms = new Medications(expected);
-        
+
         ArrayList<Medication> given = ms.getMedicationList();
 
         assertEquals(expected, given);
     }
 
     // User
-    
+
     @Test
     public static void testUser(){
         User u = new User();
@@ -214,48 +214,48 @@ public class TestHarness {
         String given = u.getUsername();
         assertEquals(expected, given);
     }
-    
+
     //Vitals
-       
+
     @Test
     public static void testBodyTempF(){
-        
+
         double expected = 99.8;
         Vitals v = new Vitals(expected, 150, 6.2,  120, 80 , 18, 90);
-        
+
         double given =v.getBodyTempF();
         assertEquals(expected, given,0);
 
     }
-    
-    @Test 
+
+    @Test
     public static void testWeightLB(){
         double expected = 150;
         Vitals v = new Vitals(99.8, expected, 6.2,  120, 80 , 18, 90);
-        
+
         double given = v.getWeightLB();
         assertEquals(expected, given,0);
 
     }
-    
+
     @Test
     public static void testHeightFT(){
         double expected = 6.2;
         Vitals v = new Vitals(99.8, 150, expected,  120, 80 , 18, 90);
-        
+
         double given = v.getHeightFT();
         assertEquals(expected, given,0);
     }
-    
+
     @Test
     public static void testBPSystolic(){
         double expected = 120;
         Vitals v = new Vitals(99.8, 150, 6.2,  expected, 80 , 18, 90);
         double given = v.getBpSystolic();
         assertEquals(expected, given,0);
-        
+
     }
-    
+
     @Test
     public static void testBPDiastolic(){
         double expected = 80;
@@ -263,7 +263,7 @@ public class TestHarness {
         double given = v.getBpDiastolic();
         assertEquals(expected, given,0);
     }
-    
+
     @Test
     public static void testRespRate(){
         double expected = 18;
@@ -271,7 +271,7 @@ public class TestHarness {
         double given = v.getRespRate();
         assertEquals(expected, given,0);
     }
-    
+
     @Test
     public static void testPulseBPM(){
         double expected = 18;
